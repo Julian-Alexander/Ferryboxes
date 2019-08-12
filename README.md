@@ -13,45 +13,43 @@ Below is an example of a json file with ferrybox measurements:
 ```
 {
   "t": [
-    {
-      "properties": {
-        "datetime": "2019-08-05T23:15:20",
-        "platform_code": "FA",
-        "signal_id": "a53af03c-1422-406e-b01a-2a3b6b68a2a8"
-      },
+       {
       "measurements": {
-        "FA/ferrybox/GPS/TIME": 231520.0,
-        "FA/ferrybox/SYSTEM/PUMP": 1.0,
-        "FA/ferrybox/SYSTEM/OBSTRUCTION": 0.0,
-        "FA/ferrybox/SAMPLER/MANUAL_COUNTER": 0.0,
-        "FA/ferrybox/SAMPLER/AUTOMATIC_COUNTER": 0.0,
-        "FA/ferrybox/SYSTEM/TRIP_NUMBER": 12393.0,
-        "FA/ferrybox/TURBIDITY": 0.46,
-        "FA/ferrybox/CHLA_FLUORESCENCE/RAW": 4.65,
-        "FA/ferrybox/CHLA_FLUORESCENCE/ADJUSTED": 1.395,
-        "FA/ferrybox/INLET/TEMPERATURE": 20.425,
-        "FA/ferrybox/CTD/TEMPERATURE": 20.908,
-        "FA/ferrybox/CTD/SALINITY": 18.978,
-        "FA/ferrybox/OXYGEN/CONCENTRATION": 0.0,
-        "FA/ferrybox/OXYGEN/SATURATION": 0.0,
-        "FA/ferrybox/OXYGEN/TEMPERATURE": 0.0,
-        "FA/ferrybox/CDOM_FLUORESCENCE/RAW": 3.4,
-        "FA/ferrybox/CDOM_FLUORESCENCE/ADJUSTED": 3.4,
-        "FA/ferrybox/CYANO_FLUORESCENCE/RAW": 4.1,
-        "FA/ferrybox/CYANO_FLUORESCENCE/ADJUSTED": 4.1,
-        "FA/ferrybox/INLET/OXYGEN/SATURATION": 0.0,
-        "FA/ferrybox/INLET/OXYGEN/CONCENTRATION": 0.0,
-        "FA/ferrybox/INLET/OXYGEN/TEMPERATURE": 0.0,
-        "FA/ferrybox/PAH_FLUORESCENCE/RAW": 8.4,
-        "FA/ferrybox/PAH_FLUORESCENCE/ADJUSTED": 8.4
-      },
-      "measured_flags": {
-        "FA/ferrybox/QC/G0/SYSTEM/DATA_FLAG_UNDERWAY": 1.0
-      },
+        "FA/ferrybox/CTD/SALINITY": 15.873, 
+        "FA/ferrybox/CTD/TEMPERATURE": 2.02, 
+        "FA/ferrybox/OXYGEN/CONCENTRATION": 362.44, 
+        "FA/ferrybox/OXYGEN/TEMPERATURE": 2.27, 
+        "FA/ferrybox/TURBIDITY": 1.901
+      }, 
+      "properties": {
+        "signal_id": "1dbf8568-838e-44a4-8cfc-8199ac3c49d3", 
+        "platform_code": "FA", 
+        "datetime": "2011-03-16T22:07:21"
+      }, 
       "location": {
         "FA/gpstrack": {
-          "longitude": 11.5786,
-          "latitude": 57.3122
+          "latitude": 56.7767, 
+          "longitude": 11.8912
+        }
+      }
+    }, 
+    {
+      "measurements": {
+        "FA/ferrybox/CTD/SALINITY": 15.877, 
+        "FA/ferrybox/CTD/TEMPERATURE": 2.05, 
+        "FA/ferrybox/OXYGEN/CONCENTRATION": 361.89, 
+        "FA/ferrybox/OXYGEN/TEMPERATURE": 2.3, 
+        "FA/ferrybox/TURBIDITY": 1.846
+      }, 
+      "properties": {
+        "signal_id": "a0ca726d-0482-4857-8246-9ee6489ddd3e", 
+        "platform_code": "FA", 
+        "datetime": "2011-03-16T22:08:21"
+      }, 
+      "location": {
+        "FA/gpstrack": {
+          "latitude": 56.7822, 
+          "longitude": 11.8876
         }
       }
     }
@@ -61,14 +59,9 @@ Below is an example of a json file with ferrybox measurements:
 
 
 ## Task
-- read and parse the signals json file with ferrybox measurements
-  - see file FA.2011-03-16T05:09:00_2011-03-17T06:11:31.json
-- create a simple web application with a visualization of the following measurements:
-  - temperature
-  - salinity
-  - turbidity
+- read and parse the signals.json file with ferrybox measurements
+- create a simple web application with a visualization of the measurements
 - add controls which allows the user to specify start/end time, allowing the user to choose which time period to display
-
 
 
 ## Deliverables
