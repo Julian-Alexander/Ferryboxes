@@ -67,8 +67,7 @@ Below is an example of a json file with ferrybox measurements:
   - temperature
   - salinity
   - turbidity
-- apply simple quality control and filter out noisy data
-  - TODO: set some thresholds?
+- add controls which allows the user to specify start/end time, allowing the user to choose which time period to display
 
 
 
@@ -76,9 +75,9 @@ Below is an example of a json file with ferrybox measurements:
 
 We expect you to make a web application with visualizations described above.
 
-Please bring the code (either on your own machine or do a private github fork) and prepare a short oral presentation of your work in the interview.
-
 To make sure you don't stay up all night to complete this, we want to timecap the task to 2-3 hours. We don't expect a fully polished solution.
+
+Please bring the code (either on your own machine or do a private github fork) and prepare a short oral presentation of your work in the interview.
 
 ### Technology
 
