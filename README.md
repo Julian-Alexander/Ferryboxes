@@ -4,11 +4,11 @@ The purpose of this repo is to be used as a coding challenge during interviews.
 
 ## Introduction
 
-We do a lot of environmental monitoring in NIVA. We have automatic sensors measuring the surrounding environment, both stationary and moving sensors. Monitoring the environment can be challenging, especially when we work with water. Algae growing on the sensors is one example of factors which may lead to false values.
+We do a lot of environmental monitoring in NIVA. We have automatic sensors measuring the surrounding environment, both stationary and moving sensors.
 
-One of our data sources are so called "ferryboxes", which are installed in various ships. These pump in water and have various sensors in place, feeding us data over satellite connection.  
+One of our data sources are so called "ferryboxes", which are installed in various ships. These pump in water and have sensors in place, feeding us data over satellite connection.  
 
-Below is an example of a json file with ferrybox measurements:
+Below is an example of a transferred json file with ferrybox measurements:
 
 ```
 {
