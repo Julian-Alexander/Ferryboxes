@@ -21,7 +21,6 @@ class Visualizer extends React.Component {
     salinity = signals.t.map(({ measurements, properties }) => {
       const sal = measurements['FA/ferrybox/CTD/SALINITY'];
       const date = new Date(properties.datetime);
-      console.log('salinity-date', sal, date);
       return { x: date, y: sal };
     });
 
@@ -100,6 +99,18 @@ class Visualizer extends React.Component {
           snapToDataPoint: true
         }
       },
+      axisY2: {
+        title: "Oxygen Concentration",
+        titleFontColor: "#51CDA0",
+				lineColor: "#51CDA0",
+				labelFontColor: "#51CDA0",
+				tickColor: "#51CDA0",
+				includeZero: false,
+        crosshair: {
+          enabled: true,
+          snapToDataPoint: true
+        }
+      },
       legend: {
         cursor: 'pointer',
         itemclick: this.toggleDataSeries
@@ -132,6 +143,7 @@ class Visualizer extends React.Component {
           type: 'line',
           showInLegend: true,
           name: 'Oxygen Concentration',
+          axisYType: "secondary",
           dataPoints: oxyCon
         },
         {
