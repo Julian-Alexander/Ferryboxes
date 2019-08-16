@@ -5,7 +5,6 @@ import Visualizer from './visualizer/visualizer.component';
 function App() {
   return (
     <div className='App'>
-      NIVA
       <Visualizer />
     </div>
   );

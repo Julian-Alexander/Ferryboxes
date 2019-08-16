@@ -1,0 +1,27 @@
+.info-container {
+    padding: 14px 14rem 0 14rem;
+    color: white;
+
+    .info {
+        display: flex;
+        justify-content: center;
+        padding: 22px 0 0 0;
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 420px) {
+    .info-container {
+        padding: 2rem 1rem 0 1rem;
+    }
+}
+
+@media all and (max-width: 330px) {
+    .info-container {
+        padding-top: 2rem;
+
+        .info {
+            padding: 0;
+        }
+    }
+}
