@@ -100,12 +100,12 @@ class Visualizer extends React.Component {
         }
       },
       axisY2: {
-        title: "Oxygen Concentration",
-        titleFontColor: "#51CDA0",
-				lineColor: "#51CDA0",
-				labelFontColor: "#51CDA0",
-				tickColor: "#51CDA0",
-				includeZero: false,
+        title: 'Oxygen Concentration',
+        titleFontColor: '#51CDA0',
+        lineColor: '#51CDA0',
+        labelFontColor: '#51CDA0',
+        tickColor: '#51CDA0',
+        includeZero: false,
         crosshair: {
           enabled: true,
           snapToDataPoint: true
@@ -143,7 +143,7 @@ class Visualizer extends React.Component {
           type: 'line',
           showInLegend: true,
           name: 'Oxygen Concentration',
-          axisYType: "secondary",
+          axisYType: 'secondary',
           dataPoints: oxyCon
         },
         {
@@ -162,6 +162,12 @@ class Visualizer extends React.Component {
     return (
       <div>
         <CanvasJSChart options={options} onRef={ref => (this.chart = ref)} />
+        <div className='info-container'>
+          <div className='info'>
+            Use the top right icons after Zooming to Pan and Reset
+          </div>
+          <span className='info'>Click Legend to Hide/Show Measurements</span>
+        </div>
       </div>
     );
   }
