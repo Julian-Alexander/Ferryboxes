@@ -8,6 +8,8 @@ const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 let salinity = [];
 let temperature = [];
 let turbidity = [];
+let oxyCon = [];
+let oxyTemp = [];
 
 class Visualizer extends React.Component {
   state = {
@@ -34,8 +36,29 @@ class Visualizer extends React.Component {
       return { x: date, y: turb };
     });
 
+    oxyCon = signals.t.map(({ measurements, properties, location }) => {
+      const oxyCon = measurements['FA/ferrybox/OXYGEN/CONCENTRATION'];
+      const date = new Date(properties.datetime);
+      return { x: date, y: oxyCon };
+    });
+
+    oxyTemp = signals.t.map(({ measurements, properties, location }) => {
+      const oxyTemp = measurements['FA/ferrybox/OXYGEN/TEMPERATURE'];
+      const date = new Date(properties.datetime);
+      return { x: date, y: oxyTemp };
+    });
+
     this.setState({ reload: true });
   }
+
+  toggleDataSeries = e => {
+    if (typeof e.dataSeries.visible === 'undefined' || e.dataSeries.visible) {
+      e.dataSeries.visible = false;
+    } else {
+      e.dataSeries.visible = true;
+    }
+    this.chart.render();
+  };
 
   render() {
     const options = {
@@ -64,6 +87,10 @@ class Visualizer extends React.Component {
           snapToDataPoint: true
         }
       },
+      legend: {
+        cursor: 'pointer',
+        itemclick: this.toggleDataSeries
+      },
       data: [
         {
           yValueFormatString: '#,###,###.##',
@@ -84,6 +111,18 @@ class Visualizer extends React.Component {
           showInLegend: true,
           name: 'Turbidity',
           dataPoints: turbidity
+        },
+        {
+          type: 'line',
+          showInLegend: true,
+          name: 'Oxygen Concentration',
+          dataPoints: oxyCon
+        },
+        {
+          type: 'line',
+          showInLegend: true,
+          name: 'Oxygen Temperature',
+          dataPoints: oxyTemp
         }
       ]
     };
