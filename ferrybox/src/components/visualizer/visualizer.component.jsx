@@ -10,6 +10,7 @@ let temperature = [];
 let turbidity = [];
 let oxyCon = [];
 let oxyTemp = [];
+let propLatLon = [];
 
 class Visualizer extends React.Component {
   state = {
@@ -46,6 +47,18 @@ class Visualizer extends React.Component {
       const oxyTemp = measurements['FA/ferrybox/OXYGEN/TEMPERATURE'];
       const date = new Date(properties.datetime);
       return { x: date, y: oxyTemp };
+    });
+
+    propLatLon = signals.t.map(({ properties, location }) => {
+      const lat = location['FA/gpstrack'].latitude;
+      const lon = location['FA/gpstrack'].longitude;
+      const signalID = properties.signal_id;
+      const platCode = properties.platform_code;
+      const date = new Date(properties.datetime);
+      return {
+        x: date,
+        y: `<br/><strong>Platform code: </strong>${platCode}<br/><strong>Latitude: </strong>${lat}<br/><strong>Longitude: </strong>${lon}<br/><strong>Signal ID: </strong>${signalID}`
+      };
     });
 
     this.setState({ reload: true });
@@ -91,6 +104,9 @@ class Visualizer extends React.Component {
         cursor: 'pointer',
         itemclick: this.toggleDataSeries
       },
+      toolTip: {
+        shared: true
+      },
       data: [
         {
           yValueFormatString: '#,###,###.##',
@@ -123,6 +139,11 @@ class Visualizer extends React.Component {
           showInLegend: true,
           name: 'Oxygen Temperature',
           dataPoints: oxyTemp
+        },
+        {
+          type: 'line',
+          name: 'Properties ',
+          dataPoints: propLatLon
         }
       ]
     };
