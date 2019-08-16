@@ -14,6 +14,13 @@ To start the Ferrybox data visualizer.
 
       yarn start
 
+## **Review Time Window**
+
+- Reviewing a time window can be easily done by selecting the desired time at the visualizer and dragging to the desired time.
+- Once Zoomed in, all functionality including Chart toggling still works. You can pan through the graph by clicking the panning "Cross" icon that will appear on the top right corner of the visualizer.
+- You can keep zooming in for a new time window inside of the previous time window.
+- To reset, click the "Circling Arrow" icon to go back to the general view of the visualizer.
+
 ## **Dependencies and libraries**
 
 ### Dependencies
