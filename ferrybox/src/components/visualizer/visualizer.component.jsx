@@ -6,6 +6,7 @@ import signals from '../../data/signals.json';
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 let salinity = [];
+let temperature = [];
 
 class Visualizer extends React.Component {
   state = {
@@ -19,6 +20,13 @@ class Visualizer extends React.Component {
       console.log(salinity);
       return { x: date, y: sal };
     });
+
+    temperature = signals.t.map(({ measurements, properties, location }) => {
+      const temp = measurements['FA/ferrybox/CTD/TEMPERATURE'];
+      const date = new Date(properties.datetime);
+      return { x: date, y: temp };
+    });
+
     this.setState({ reload: true });
   }
 
@@ -56,6 +64,11 @@ class Visualizer extends React.Component {
           name: 'Salinity',
           type: 'line',
           dataPoints: salinity
+        },
+        {
+          type: 'line',
+          name: 'Temperature',
+          dataPoints: temperature
         }
       ]
     };
