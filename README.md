@@ -10,9 +10,21 @@ To start the Ferrybox data visualizer.
 
       cd ferrybox
 
+- Install dependencies
+
+      yarn
+
+or
+
+      npm i
+
 - Start project by running
 
       yarn start
+
+or
+
+      npm start
 
 ## **Review Time Window**
 
