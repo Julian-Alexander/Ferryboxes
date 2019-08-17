@@ -14,7 +14,7 @@ To start the Ferrybox data visualizer.
 
       yarn
 
-or
+  or if using NPM:
 
       npm i
 
@@ -22,7 +22,7 @@ or
 
       yarn start
 
-or
+  or if using NPM:
 
       npm start
 
